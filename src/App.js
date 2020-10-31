@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import Checkout from './pages/Checkout';
-import Main from './pages/Main';
-import ProductDetail from './pages/ProductDetail';
+const Main = lazy(() => import('./pages/Main'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Checkout = lazy(() => import('./pages/Checkout'));
 
 function App() {
 	return (
 		<Router>
-			<Switch>
-				<Route path='/'>
-					<Main />
-				</Route>
+			<Suspense fallback={<div>Loading...</div>}>
+				<Switch>
+					<Route path='/' exact>
+						<Main />
+					</Route>
 
-				<Route path='/product-detail/:id'>
-					<ProductDetail />
-				</Route>
+					<Route path='/product-detail/:id'>
+						<ProductDetail />
+					</Route>
 
-				<Route path='/checkout'>
-					<Checkout />
-				</Route>
-			</Switch>
+					<Route path='/checkout'>
+						<Checkout />
+					</Route>
+				</Switch>
+			</Suspense>
 		</Router>
 	);
 }
