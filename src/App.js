@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 import './App.css';
+import Checkout from './pages/Checkout';
+import Main from './pages/Main';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to Fake Store
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<Switch>
+				<Route path='/'>
+					<Main />
+				</Route>
+
+				<Route path='/product-detail/:id'>
+					<ProductDetail />
+				</Route>
+
+				<Route path='/checkout'>
+					<Checkout />
+				</Route>
+			</Switch>
+		</Router>
+	);
 }
 
 export default App;
