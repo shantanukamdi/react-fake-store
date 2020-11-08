@@ -1,0 +1,17 @@
+.header {
+	display: flex;
+	justify-content: space-around;
+	height: 56px;
+	background-color: #2874f0;
+	color: #fff;
+	/* margin-bottom: 20px; */
+	align-items: center;
+}
+
+.cart-length {
+	text-decoration: underline;
+}
+
+.cart-header:hover {
+	cursor: pointer;
+}
