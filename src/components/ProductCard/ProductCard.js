@@ -12,7 +12,8 @@ function ProductCard({ product }) {
 
 	const { id, title, price, description, category, image } = product;
 
-	const handleAddToCart = (product) => {
+	const handleAddToCart = (evt, product) => {
+		evt.stopPropagation();
 		if (product) {
 			const cartItems = [...cart];
 			cartItems.push(product);
@@ -27,7 +28,7 @@ function ProductCard({ product }) {
 	};
 
 	return (
-		<div className='card' title={title}>
+		<div className='card' title={title} onClick={() => handleNavigateToProductDetail(id)}>
 			<img src={image} alt={title} className='card__image' />
 
 			<div className='card__content'>
@@ -37,7 +38,9 @@ function ProductCard({ product }) {
 			<div className='card__info'>
 				<div>$ {price}</div>
 				<div>
-					<button className='card__link'>Add to Cart</button>
+					<button className='card__link' onClick={(evt) => handleAddToCart(evt, product)}>
+						Add to Cart
+					</button>
 				</div>
 			</div>
 		</div>

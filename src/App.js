@@ -9,13 +9,14 @@ import { Provider } from './context/Provider.js';
 const Main = lazy(() => import('./pages/Main'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 const Checkout = lazy(() => import('./pages/Checkout'));
+const Cart = lazy(() => import('./pages/Cart'));
 
 function App() {
 	return (
 		<>
 			<Provider>
-				<Header />
 				<Router>
+					<Header />
 					<Suspense fallback={<div>Loading...</div>}>
 						<Switch>
 							<Route path='/' exact>
@@ -28,6 +29,10 @@ function App() {
 
 							<Route path='/checkout'>
 								<Checkout />
+							</Route>
+
+							<Route path='/cart'>
+								<Cart />
 							</Route>
 						</Switch>
 					</Suspense>

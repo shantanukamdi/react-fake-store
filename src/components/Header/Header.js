@@ -3,40 +3,32 @@ import React, { useContext } from 'react';
 import './Header.css';
 
 import AppContext from '../../context/AppContext';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
 	const [cart, setCart] = useContext(AppContext);
-	console.log('Header -> cart', cart);
+	const history = useHistory();
+
+	const handleNavToCart = () => {
+		history.push('/cart');
+		console.log('handleNavToCart -> history', history);
+	};
+
 	return (
-		<div class='Navbar'>
-			<nav class='Navbar__Items'>
-				<div class='Navbar__Link Navbar__Link-brand'>EFlipkart</div>
-				<div class='Navbar__Link'>Home</div>
-				<div class='Navbar__Link'>About</div>
-				<div class='Navbar__Link'>Contact</div>
+		<div className='Navbar'>
+			<nav className='Navbar__Items'>
+				<div className='Navbar__Link Navbar__Link-brand'>EFlipkart</div>
+				<div className='Navbar__Link'>Home</div>
+				<div className='Navbar__Link'>About</div>
+				<div className='Navbar__Link'>Contact</div>
 			</nav>
-			<nav class='Navbar__Items Navbar__Items--right'>
-				<div class='Navbar__Link'>Cart {cart.length}</div>
+			<nav className='Navbar__Items Navbar__Items--right'>
+				<div className='Navbar__Link' onClick={handleNavToCart}>
+					Cart {cart.length}
+				</div>
 			</nav>
 		</div>
 	);
 }
 
 export default Header;
-
-/**
- * <div class='topnav'>
-			<div>
-				<a class='active' href='#home'>
-					Home
-				</a>
-				<a href='#news'>News</a>
-				<a href='#contact'>Contact</a>
-				<a href='#about'>About</a>
-			</div>
-
-			<div style={{ float: 'right' }}>
-				<a href='#about'>Cart {cart.length}</a>
-			</div>
-		</div>
- */

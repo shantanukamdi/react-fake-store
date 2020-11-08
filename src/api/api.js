@@ -4,4 +4,8 @@ function getAllProducts() {
 	return fetch(API.PRODUCTS);
 }
 
-export { getAllProducts };
+function getProductById(id) {
+	return fetch(`${API.PRODUCTS}/${id}`);
+}
+
+export { getAllProducts, getProductById };
