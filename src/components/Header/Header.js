@@ -8,7 +8,24 @@ function Header() {
 	const [cart, setCart] = useContext(AppContext);
 	console.log('Header -> cart', cart);
 	return (
-		<div class='topnav'>
+		<div class='Navbar'>
+			<nav class='Navbar__Items'>
+				<div class='Navbar__Link Navbar__Link-brand'>EFlipkart</div>
+				<div class='Navbar__Link'>Home</div>
+				<div class='Navbar__Link'>About</div>
+				<div class='Navbar__Link'>Contact</div>
+			</nav>
+			<nav class='Navbar__Items Navbar__Items--right'>
+				<div class='Navbar__Link'>Cart {cart.length}</div>
+			</nav>
+		</div>
+	);
+}
+
+export default Header;
+
+/**
+ * <div class='topnav'>
 			<div>
 				<a class='active' href='#home'>
 					Home
@@ -22,7 +39,4 @@ function Header() {
 				<a href='#about'>Cart {cart.length}</a>
 			</div>
 		</div>
-	);
-}
-
-export default Header;
+ */

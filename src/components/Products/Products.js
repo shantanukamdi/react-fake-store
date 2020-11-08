@@ -6,7 +6,7 @@ import './Products.css';
 
 function Products({ products }) {
 	return (
-		<div className='grid'>
+		<div className='products'>
 			{products && products.length > 0 ? (
 				products.map((product) => {
 					return <ProductCard product={product} />;

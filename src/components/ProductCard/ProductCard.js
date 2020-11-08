@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 import AppContext from '../../context/AppContext.js';
 
 import './ProductCard.css';
 
 function ProductCard({ product }) {
+	const history = useHistory();
 	const [cart, setCart] = useContext(AppContext);
 
 	const { id, title, price, description, category, image } = product;
@@ -18,22 +20,24 @@ function ProductCard({ product }) {
 		}
 	};
 
+	const handleNavigateToProductDetail = (id) => {
+		if (id) {
+			history.push(`/product-detail/${id}`);
+		}
+	};
+
 	return (
-		<div class='grid__item'>
-			<div class='card'>
-				<img class='card__img' src={image} alt={title} />
-				<div class='card__content'>
-					<h1 class='card__header'>{title}</h1>
-					{/* <p class='card__text'>{description}</p> */}
-					<button class='card__btn'>$ {price}</button>
-					<button
-						class='card__btn'
-						onClick={() => {
-							handleAddToCart(product);
-						}}
-					>
-						Add To Card
-					</button>
+		<div className='card' title={title}>
+			<img src={image} alt={title} className='card__image' />
+
+			<div className='card__content'>
+				<p>{title}</p>
+			</div>
+
+			<div className='card__info'>
+				<div>$ {price}</div>
+				<div>
+					<button className='card__link'>Add to Cart</button>
 				</div>
 			</div>
 		</div>
