@@ -10,8 +10,8 @@ function ProductDetail() {
 	const { id } = useParams();
 	const history = useHistory();
 	const [cart, setCart] = useContext(AppContext);
-	const [counter, setCounter] = useState(0);
 	const [product, setProduct] = useState({});
+	const [disableAddToCartBtn, setDisableAddToCartBtn] = useState(false);
 
 	useEffect(() => {
 		getProductById(id)
@@ -23,14 +23,7 @@ function ProductDetail() {
 		const oldCart = [...cart];
 		oldCart.push(product);
 		setCart(oldCart);
-	};
-
-	const handleIncrementByOne = () => {
-		setCounter((prevCount) => prevCount + 1);
-	};
-
-	const handleDecrementByOne = () => {
-		setCounter((prevCount) => (prevCount === 0 ? 0 : prevCount - 1));
+		setDisableAddToCartBtn(true);
 	};
 
 	return (
@@ -38,7 +31,7 @@ function ProductDetail() {
 			<p className='back-arrow' title='Go Back' onClick={() => history.goBack()}>
 				&larr;
 			</p>
-			{product && (
+			{product.id ? (
 				<div className='product'>
 					<img src={product.image} alt={product.title} />
 
@@ -49,27 +42,22 @@ function ProductDetail() {
 						</div>
 
 						<div className='product__bottom'>
-							<div>
-								<input type='text' name='quantity' id='quantitiy' value={counter}></input>
-								<button onClick={handleIncrementByOne}>
-									<i class='material-icons'>add</i>
-								</button>
-								<button onClick={handleDecrementByOne}>
-									<i class='material-icons'>remove</i>
-								</button>
-							</div>
 							<p className='product__price'>$ {product.price}</p>
 
 							<button
 								onClick={() => {
 									handleAddProductToCart(product);
 								}}
+								className={`btn btn-add-cart`}
+								disabled={disableAddToCartBtn}
 							>
 								Add To Cart
 							</button>
 						</div>
 					</div>
 				</div>
+			) : (
+				<>Loading...</>
 			)}
 		</div>
 	);

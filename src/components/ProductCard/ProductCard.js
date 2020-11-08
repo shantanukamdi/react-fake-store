@@ -37,11 +37,6 @@ function ProductCard({ product }) {
 
 			<div className='card__info'>
 				<div>$ {price}</div>
-				<div>
-					<button className='card__link' onClick={(evt) => handleAddToCart(evt, product)}>
-						Add to Cart
-					</button>
-				</div>
 			</div>
 		</div>
 	);

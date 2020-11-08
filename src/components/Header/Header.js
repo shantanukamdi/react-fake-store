@@ -11,22 +11,23 @@ function Header() {
 
 	const handleNavToCart = () => {
 		history.push('/cart');
-		console.log('handleNavToCart -> history', history);
+	};
+
+	const handleNavToHome = () => {
+		history.push('/');
 	};
 
 	return (
-		<div className='Navbar'>
-			<nav className='Navbar__Items'>
-				<div className='Navbar__Link Navbar__Link-brand'>EFlipkart</div>
-				<div className='Navbar__Link'>Home</div>
-				<div className='Navbar__Link'>About</div>
-				<div className='Navbar__Link'>Contact</div>
-			</nav>
-			<nav className='Navbar__Items Navbar__Items--right'>
-				<div className='Navbar__Link' onClick={handleNavToCart}>
-					Cart {cart.length}
+		<div className='header cursor-pointer'>
+			<div onClick={handleNavToHome}>
+				<h3>ECommerce</h3>
+			</div>
+
+			<div>
+				<div onClick={handleNavToCart} className='cursor-pointer'>
+					Cart <span className='cart-length'>{cart.length}</span>
 				</div>
-			</nav>
+			</div>
 		</div>
 	);
 }
