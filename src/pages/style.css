@@ -63,3 +63,26 @@
 	border: 1px solid #ccc;
 	text-align: center;
 }
+
+/* Checkout Styles */
+.checkout-form {
+	width: 50vw;
+	margin: 0 auto;
+}
+.checkout-form h2 {
+	text-align: center;
+}
+.checkout-form form {
+	display: flex;
+	flex-direction: column;
+}
+
+.checkout-form form .form-control {
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.text-danger {
+	color: red;
+}

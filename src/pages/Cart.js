@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 
 import AppContext from '../context/AppContext';
+import { useHistory } from 'react-router-dom';
 
 import './style.css';
 
 function Cart() {
+	const history = useHistory();
 	const [cart, setCart] = useContext(AppContext);
 
 	const getProductTotal = () => {
@@ -13,6 +15,10 @@ function Cart() {
 			total += cart[i].price;
 		}
 		return total;
+	};
+
+	const handleNavToCheckout = () => {
+		history.push('/checkout');
 	};
 
 	return (
@@ -44,7 +50,7 @@ function Cart() {
 
 			<div className='cart-buy'>
 				Subtotal: {getProductTotal()}
-				<button>Proceed to Buy</button>
+				<button onClick={handleNavToCheckout}>Proceed to Buy</button>
 			</div>
 		</div>
 	);
