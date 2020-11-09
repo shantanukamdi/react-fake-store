@@ -1,0 +1,31 @@
+/* Checkout Styles */
+.checkout-form {
+	width: 50vw;
+	margin: 0 auto;
+}
+.checkout-form h2 {
+	text-align: center;
+}
+.checkout-form form {
+	display: flex;
+	flex-direction: column;
+}
+
+.checkout-form form .form-control {
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.text-danger {
+	color: red;
+}
+
+.btn-submit {
+    padding: 10px;
+    background-color: #fb641b;
+    color: #fff;
+    font-size: 18px;
+	font-weight: bold;
+	border: none;
+}

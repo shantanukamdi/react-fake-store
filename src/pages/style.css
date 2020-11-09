@@ -1,105 +1,3 @@
-.back-arrow {
-	font-size: 32px;
-	margin-bottom: 20px;
-}
-.back-arrow:hover {
-	cursor: pointer;
-}
-.product-wrapper {
-	margin: 60px auto;
-	width: 70vw;
-}
-.product {
-	display: flex;
-}
-
-.product img {
-	width: 20%;
-	display: block;
-}
-
-.product__content {
-	margin-left: 30px;
-	padding: 20px;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	line-height: 1.5;
-}
-
-.product__bottom {
-	display: flex;
-	justify-content: space-around;
-}
-
-.product__price {
-	font-size: 24px;
-}
-
-/* Cart Styles */
-
-.cart-wrapper {
-	display: flex;
-}
-
-.cart {
-	margin: 0 auto;
-	height: 80vh;
-	overflow: auto;
-}
-.cart-item {
-	display: flex;
-	margin-bottom: 20px;
-	padding: 30px;
-}
-
-.cart-item img {
-	width: 10%;
-	margin-right: 20px;
-}
-
-.cart-buy {
-	width: 30vw;
-	height: 20vh;
-	display: flex;
-	flex-direction: column;
-	border: 1px solid #eee;
-	text-align: center;
-	padding: 10px;
-	margin: 20px;
-}
-
-.cart-buy button {
-	outline: none;
-	background-color: #fb641b;
-	color: #fff;
-	border: none;
-	padding: 10px;
-	margin-top: 10px;
-}
-
-/* Checkout Styles */
-.checkout-form {
-	width: 50vw;
-	margin: 0 auto;
-}
-.checkout-form h2 {
-	text-align: center;
-}
-.checkout-form form {
-	display: flex;
-	flex-direction: column;
-}
-
-.checkout-form form .form-control {
-	margin-bottom: 10px;
-	display: flex;
-	flex-direction: column;
-}
-
-.text-danger {
-	color: red;
-}
 
 /* Shimmer Properties */
 
@@ -157,17 +55,6 @@
 	display: flex;
 }
 
-/* Input Styles */
-input[type='text'],
-input[type='password'],
-input[type='email'],
-textarea {
-	padding: 10px;
-	border: 1px solid #9fa5b5;
-	outline: none;
-	border-radius: 4px;
-	margin-top: 5px;
-}
 
 .quantity-input {
 	width: 40px;
@@ -179,18 +66,7 @@ textarea {
 	cursor: pointer;
 }
 
-.btn-add-cart {
-	background-color: #fb641b;
-	outline: none;
-	border: none;
-	color: #fff;
-	padding: 10px;
-}
 
-.btn-add-cart:hover {
-	cursor: pointer;
-	background-color: #fb651fea;
-}
 
 .cart-price-quantity {
 	display: flex;

@@ -6,10 +6,10 @@ import './App.css';
 import Header from './components/Header/Header';
 import { Provider } from './context/Provider.js';
 
-const Main = lazy(() => import('./pages/Main'));
-const ProductDetail = lazy(() => import('./pages/ProductDetail'));
-const Checkout = lazy(() => import('./pages/Checkout'));
-const Cart = lazy(() => import('./pages/Cart'));
+const Main = lazy(() => import('./pages/Main/Main'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail/ProductDetail'));
+const Checkout = lazy(() => import('./pages/Checkout/Checkout'));
+const Cart = lazy(() => import('./pages/Cart/Cart'));
 
 function App() {
 	return (

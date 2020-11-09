@@ -9,3 +9,15 @@
 body {
 	/* background-color: #fafafa; */
 }
+
+/* Input Styles */
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+	padding: 10px;
+	border: 1px solid #9fa5b5;
+	outline: none;
+	border-radius: 4px;
+	margin-top: 5px;
+}
