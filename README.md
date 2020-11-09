@@ -18,7 +18,8 @@ Ecommerce react app integrated with [Fake Store API](https://fakestoreapi.com/)
 3. Context
 4. Validation
 5. fetch API
-6. Deploy using netlify
+6. React Lazy and Suspense
+7. Deploy using netlify
 
 ##### Steps to setup
 1. Clone the repo
