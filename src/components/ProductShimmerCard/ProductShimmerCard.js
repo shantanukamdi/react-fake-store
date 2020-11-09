@@ -4,10 +4,10 @@ import './ProductShimmerCard.css';
 
 function ProductShimmerCard() {
 	return (
-		<div class='shimmer-card'>
-			<div class='wrapper'>
-				<div class='product-image animate din'></div>
-				<div class='comment br animate'></div>
+		<div className='shimmer-card'>
+			<div className='wrapper'>
+				<div className='product-image animate din'></div>
+				<div className='comment br animate'></div>
 				{/* <div class='comment br animate'></div>
 				<div class='comment br animate'></div> */}
 			</div>

@@ -12,10 +12,10 @@ function Products({ products }) {
 		<div className='products'>
 			{products && products.length > 0
 				? products.map((product) => {
-						return <ProductCard product={product} />;
+						return <ProductCard product={product} key={product.id}/>;
 				  })
 				: shimmerArray.map((el, index) => {
-						return <ProductShimmerCard />;
+						return <ProductShimmerCard key={index}/>;
 				  })}
 		</div>
 	);
