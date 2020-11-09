@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/24b4d79a-e996-4ff0-80b7-f782c03673ea/deploy-status)](https://app.netlify.com/sites/dazzling-montalcini-6b4532/deploys)
+
 # React Fake Store Ecommerce Application
 
 Website URL: https://dazzling-montalcini-6b4532.netlify.app
